@@ -62,7 +62,7 @@ else
     } > "$CONFIG"
 fi
 
-sed -E 's/^(PASSWORD|TOKEN|ACCESSTOKEN|SECRET)=.*/\1=********/i' "$CONFIG"
+sed -E 's/^(PASSWORD|TOKEN|ACCESSTOKEN|SECRET)\s*=.*/\1 = ********/i' "$CONFIG"
 
 # Wait for Home Assistant to be ready before starting
 wait_for_homeassistant
